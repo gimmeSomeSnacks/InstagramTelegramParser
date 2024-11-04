@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: InstaTGBot
+bot:
+    name: "InstaDownloadBot"
+    token: "7105187050:AAFW4b1II-DM9P8xqkg3As99OBKkX3bUx4o"
+instagram:
+    csr: ""

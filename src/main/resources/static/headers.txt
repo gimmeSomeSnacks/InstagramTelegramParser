@@ -1,0 +1,26 @@
+Accept: */*
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ru-RU,ru;q=0.9
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Cookie: mid=Zxuq_AALAAFmVh7O7yJFGatRuniP; datr=_KobZ-BcL0cc7g6D7qRvhejY; ig_did=9BAE8A73-310A-450F-B295-D84718AE2CB1; dpr=1.25; rur="LLA\05410964898219\0541761404873:01f7133875f9e0c65c3b1052b759ce39edba98d425eaa0a10f793aed171ac8722f308537"; csrftoken=enrERSuHw8KF5Lglwxuu3O; ps_l=1; ps_n=1; ig_nrcb=1; wd=816x748
+Origin: https://www.instagram.com
+Pragma: no-cache
+Priority: u=1, i
+Sec-Ch-Prefers-Color-Scheme: light
+Sec-Ch-Ua: "Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99"
+Sec-Ch-Ua-Full-Version-List: "Chromium";v="130.0.6723.92", "Google Chrome";v="130.0.6723.92", "Not?A_Brand";v="99.0.0.0"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Model: ""
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Ch-Ua-Platform-Version: "15.0.0"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
+X-Asbd-Id: 129477
+X-Bloks-Version-Id: a2e134f798301e28e517956976df910b8fa9c85f9187c2963f77cdd733f46130
+X-Csrftoken: enrERSuHw8KF5Lglwxuu3O
+X-Fb-Friendly-Name: PolarisPostActionLoadPostQueryQuery
+X-Fb-Lsd: AVra_wtGm64
+X-Ig-App-Id: 936619743392459
