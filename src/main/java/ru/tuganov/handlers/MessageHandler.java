@@ -3,6 +3,7 @@ package ru.tuganov.handlers;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.luben.zstd.Zstd;
+import com.github.luben.zstd.ZstdInputStream;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ResourceLoader;
@@ -40,7 +41,10 @@ public class MessageHandler {
         SendMediaGroup sendMediaGroup = new SendMediaGroup();
         sendMediaGroup.setChatId(chatId);
         for (String url : urlList) {
-            mediaList.add(getVideo(url));
+            var video = getVideo(url);
+            if (video != null) {
+                mediaList.add(video);
+            }
         }
         sendMediaGroup.setMedias(mediaList);
         return sendMediaGroup;
@@ -49,6 +53,9 @@ public class MessageHandler {
     private InputMediaVideo getVideo(String url) {
         InputMediaVideo video = new InputMediaVideo();
         String realUrl = getDownloadUrl(url);
+        if (realUrl == "") {
+            return null;
+        }
         try (HttpClient client = HttpClient.newHttpClient()) {
             var headers = getHeaders();
             HttpRequest.Builder httpRequest = HttpRequest.newBuilder()
@@ -82,6 +89,7 @@ public class MessageHandler {
     private String getDownloadUrl(String url) {
         String realUrl = "";
         String videoId = url.split("/")[4];
+
         var data = getData(videoId);
         var dataBytesLength = data.getBytes().length;
         var headers = getHeaders();
@@ -95,6 +103,9 @@ public class MessageHandler {
         final var response2 = rest.postForEntity("https://www.instagram.com/graphql/query", request2, byte[].class);
 
         long decompressedSize = Zstd.decompressedSize(response2.getBody());
+        if (decompressedSize < 0) {
+            return "";
+        }
         byte[] decompressedBytes = new byte[(int) decompressedSize];
         Zstd.decompress(decompressedBytes, response2.getBody());
         ObjectMapper objectMapper = new ObjectMapper();
