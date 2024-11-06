@@ -20,7 +20,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.*;
@@ -124,10 +123,7 @@ public class MessageHandler {
             log.error(e.getMessage());
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        String data = String.format(stringBuilder.toString(), timestamp, videoId);
-        log.info("builder: " + stringBuilder);
-        log.info("data: " + data);
-        return data;
+        return String.format(stringBuilder.toString(), timestamp, videoId);
     }
 
     private Map<String, String> getHeaders() {
